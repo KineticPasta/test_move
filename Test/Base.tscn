@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnpa0tctooov8"]
+
+[ext_resource type="Script" path="res://base.gd" id="1_i7lmp"]
+[ext_resource type="PackedScene" uid="uid://4023c632sf86" path="res://pls.tscn" id="2_3rfp0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50tn5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i57ix"]
+size = Vector2(257, 178)
+
+[node name="Base" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(464, 239)
+script = ExtResource("1_i7lmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_50tn5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(263, 242)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_i57ix")
+
+[node name="pls" parent="." instance=ExtResource("2_3rfp0")]
+position = Vector2(700, 250)
